@@ -17,8 +17,7 @@ class Slide extends CI_Controller {
         }
 
     public function add(){
-        $data['k']  = $this->db->get('tb_blogkategori');
-        $this->load->view('admin/v_slide_add',$data);
+        $this->load->view('admin/v_slide_add');
     }
 
     public function store(){
@@ -29,7 +28,7 @@ class Slide extends CI_Controller {
                 $config['upload_path'] = './uploads/slide/';
                 $this->upload->initialize($config);
                 if ($this->upload->do_upload('foto')) {
-                    $foto = $this->upload->data('file_name');p[]
+                    $foto = $this->upload->data('file_name');
                     $this->upload->display_errors();
                 }
             }

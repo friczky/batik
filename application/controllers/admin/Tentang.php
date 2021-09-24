@@ -12,13 +12,12 @@ class Tentang extends CI_Controller {
 
     public function index()
         {
-            $data['slide'] = $this->db->order_by('id','desc')->get('tb_slide');
-            $this->load->view('admin/v_slide',$data);
+            $data['slide'] = $this->db->order_by('id','desc')->get('tb_tentang');
+            $this->load->view('admin/v_tentang',$data);
         }
 
     public function add(){
-        $data['k']  = $this->db->get('tb_blogkategori');
-        $this->load->view('admin/v_slide_add',$data);
+        $this->load->view('admin/v_tendang_add');
     }
 
     public function store(){
@@ -26,28 +25,27 @@ class Tentang extends CI_Controller {
             if ($foto1) {
                 $config['allowed_types'] = 'jpg|png|gif';
                 $config['max_size'] = '0';
-                $config['upload_path'] = './uploads/slide/';
+                $config['upload_path'] = './uploads/user/';
                 $this->upload->initialize($config);
                 if ($this->upload->do_upload('foto')) {
-                    $foto = $this->upload->data('file_name');p[]
+                    $foto = $this->upload->data('file_name');
                     $this->upload->display_errors();
                 }
             }
 
         $data = [
             'judul'			=> $this->input->post('judul'),
-            'subjudul'		=> $this->input->post('subjudul'),
-            'link'		    => $this->input->post('link'),
+            'deskripsi'		=> $this->input->post('deskripsi'),
             'foto'          => $foto,
         ];
-        $this->db->insert('tb_slide',$data);
+        $this->db->insert('tb_tentang',$data);
         $this->session->set_flashdata('sukses', '<div class="alert alert-success">Berhasil menambahkan Slide !</div>');
-        redirect(base_url('admin/slide'));
+        redirect(base_url('admin/tentang'));
     }
 
     public function edit($id){
     	$data['slide']		= $this->db->where('id',$id)->get('tb_slide')->row_array();
-        $this->load->view('admin/v_slide_edit',$data);
+        $this->load->view('admin/v_tentang_edit',$data);
 
     }
 
@@ -56,18 +54,17 @@ class Tentang extends CI_Controller {
 
         $data = [
             'judul'         => $this->input->post('judul'),
-            'subjudul'      => $this->input->post('subjudul'),
-            'link'          => $this->input->post('link'),
+            'subjudul'      => $this->input->post('deskripsi')
         ];
 
         $config['allowed_types'] = 'jpg|png|gif|jfif';
         $config['max_size'] = '4096';
-        $config['upload_path'] = './uploads/slide/';
+        $config['upload_path'] = './uploads/user/';
         $this->upload->initialize($config);
         if ($this->upload->do_upload('foto')) {
             $gambarLama = $this->input->post('foto_old');
             if ($gambarLama != 'default.jpg') {
-                unlink(FCPATH . '/uploads/slide/' . $gambarLama);
+                unlink(FCPATH . '/uploads/user/' . $gambarLama);
             }
             $gambarBaru = $this->upload->data('file_name');
             $this->db->set('foto', $gambarBaru);
@@ -75,19 +72,19 @@ class Tentang extends CI_Controller {
             // echo $this->upload->display_errors();
         }
         $this->db->where('id',$id);
-        $this->db->update('tb_slide',$data);
+        $this->db->update('tb_tentang',$data);
         $this->session->set_flashdata('sukses', '<div class="alert alert-success">Berhasil mengedit Artikel !</div>');
         redirect(base_url('admin/blog'));
     }
 
     public function delete($id){
-        $data = $this->db->query("SELECT * FROM tb_slide where id='$id'");
+        $data = $this->db->query("SELECT * FROM tb_tentang where id='$id'");
         foreach ($data->result() as $u){
-            unlink('uploads/slide/'.$u->foto);
+            unlink('uploads/user/'.$u->foto);
         } 
-        $this->db->where('id',$id)->delete('tb_slide');
+        $this->db->where('id',$id)->delete('tb_tentang');
         $this->session->set_flashdata('sukses','<div class="alert alert-success"> Berhasil Menghapus Artikel !</div>');
-        redirect(base_url('admin/blog'));
+        redirect(base_url('admin/tentang'));
     }
 
 

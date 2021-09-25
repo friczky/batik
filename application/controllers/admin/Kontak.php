@@ -16,36 +16,20 @@ class Kontak extends CI_Controller {
             $this->load->view('admin/v_kontak',$data);
         }
 
-    public function add(){
-        $this->load->view('admin/v_kontak_add');
-    }
-
-    public function store(){
-        
-        $data = [
-            'nama'			=> $this->input->post('nama'),
-            'alamat'		=> $this->input->post('username'),
-            'email'		    => $this->input->post('password'),
-            'telpon'		=> $this->input->post('email'),
-            'maps'          => $this->input->post('maps')
-        ];
-        $this->db->insert('tb_kontak',$data);
-        $this->session->set_flashdata('sukses', '<div class="alert alert-success">Berhasil menambahkan user !</div>');
-        redirect(base_url('admin/kontak'));
-    }
-
     public function edit($id){
     	$data['kontak']		= $this->db->where('id',$id)->get('tb_kontak')->row_array();
         $this->load->view('admin/v_kontak_edit',$data);
-
     }
 
-    public function update($id){
+    public function update(){
+
+		$id = 1 ;
         $data = [
-            'nama'          => $this->input->post('nama'),
-            'username'      => $this->input->post('username'),
-            'password'      => $this->input->post('password'),
-            'email'         => $this->input->post('email'),
+            'nama'			=> $this->input->post('nama'),
+            'alamat'		=> $this->input->post('alamat'),
+            'email'		    => $this->input->post('email'),
+            'telpon'		=> $this->input->post('telpon'),
+            'maps'          => $this->input->post('maps')
         ];
         
         $this->db->where('id',$id);
@@ -53,18 +37,10 @@ class Kontak extends CI_Controller {
         $this->session->set_flashdata('sukses', '<div class="alert alert-success">Berhasil mengedit user !</div>');
         redirect(base_url('admin/kontak'));
     }
-
-    public function delete($id){
-        
-        $this->db->where('id',$id)->delete('tb_kontak');
-        $this->session->set_flashdata('sukses','<div class="alert alert-success"> Berhasil Menghapus User !</div>');
-        redirect(base_url('admin/kontak'));
-    }
-
 }
         
     /* End of file  User.php */
-        
+
                             
 
 		 

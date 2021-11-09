@@ -32,10 +32,11 @@ include 'part/navbar.php';
 					  <h5 class="card-title">Contact Page</h5>
 					  <hr/>
                        <div class="form-body">
+                       	<?= $this->session->flashdata('contact')?>
 					   <div class="col-sm-12 row">
 						
 					
-						<form action="<?= base_url()?>admin/tentang" method="POST" enctype="multipart/form-data">
+						<form action="<?= base_url()?>admin/kontak/update" method="POST" enctype="multipart/form-data">
 						<br>
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Store Name</div>
@@ -54,21 +55,21 @@ include 'part/navbar.php';
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Email</div>
 							<div class="col-sm-10">
-								<input type="text" name="nama" class="form-control" value="<?= $contact['email']?>">
+								<input type="text" name="email" class="form-control" value="<?= $contact['email']?>">
 							</div>
 						</div>
 						<br>
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Phone</div>
 							<div class="col-sm-10">
-								<input type="text" name="nama" class="form-control" value="<?= $contact['telpon']?>">
+								<input type="text" name="telpon" class="form-control" value="<?= $contact['telpon']?>">
 							</div>
 						</div>
 						<br>
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Maps Url</div>
 							<div class="col-sm-10">
-								<input type="text" name="nama" class="form-control" value="<?= $contact['maps']?>">
+								<input type="text" name="maps" class="form-control" value="<?= $contact['maps']?>">
 							</div>
 						</div>
 						<br>

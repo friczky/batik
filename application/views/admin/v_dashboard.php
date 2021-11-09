@@ -68,10 +68,10 @@ include 'part/navbar.php';
 							<div class="card-body">
 								<div class="d-flex align-items-center">
 									<div>
-										<p class="mb-0 text-white">Messages</p>
+										<p class="mb-0 text-white">Slide</p>
 										<h5 class="mb-0 text-white"><?= $this->db->get('tb_slide')->num_rows()?></h5>
 									</div>
-									<div class="ms-auto text-white"><i class='bx bx-chat font-30'></i>
+									<div class="ms-auto text-white"><i class='bx bx-window font-30'></i>
 									</div>
 								</div>
 								<div class="progress  bg-white-2 radius-10 mt-4" style="height:4.5px;">

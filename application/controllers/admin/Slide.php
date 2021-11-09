@@ -23,7 +23,7 @@ class Slide extends CI_Controller {
     public function store(){
         $foto1  = $_FILES['foto'];
             if ($foto1) {
-                $config['allowed_types'] = 'jpg|png|gif';
+                $config['allowed_types'] = 'jpg|png|gif|jpeg';
                 $config['max_size'] = '0';
                 $config['upload_path'] = './uploads/slide/';
                 $this->upload->initialize($config);

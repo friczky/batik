@@ -34,7 +34,7 @@
         <!-- header-area -->
         <header class="header-style-five header-style-eight">
             <div class="header-top-wrap">
-                <div class="container custom-container-two">
+                <!-- <div class="container custom-container-two">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-sm-6">
                             <div class="header-top-link">
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div id="sticky-header" class="main-header menu-area">
@@ -81,24 +81,27 @@
                                 <nav class="menu-nav show">
                                     <div class="logo d-block d-lg-none">
                                         <?php $system = $this->db->where('id',1)->get('tb_tentang')->row_array()?>
-                                        <a href="<?= base_url()?>"><img src="<?= base_url()?>uploads/system/logo-vertikal.png" alt="Logo"></a>
+                                        <a href="<?= base_url()?>"><img src="<?= base_url()?>uploads/system/logo.png" alt="Logo"></a>
                                     </div>
                                     <div class="navbar-wrap main-menu d-none d-lg-flex">
                                         <ul class="navigation left">
                                             <li class=" menu-item-has-children has--mega--menu"><a href="<?= base_url()?>">Home</a>
                                             </li>
                                             <li class="has--mega--menu"><a href="<?= base_url()?>shop">Store</a>
+                                            <li class="has--mega--menu"><a href="#"></a>
+                                                <li class="has--mega--menu"><a href="#"></a>
+                                                    <li class="has--mega--menu"><a href="#"></a>
                                 
                                             </li>
                                         </ul>
                                         <div class="logo">
-                                            <a href="index.html"><img src="<?= base_url()?>uploads/system/<?= $system['foto']?>" alt="Logo"></a>
+                                            <a href="<?= base_url()?>"><img src="<?= base_url()?>uploads/system/<?= $system['foto']?>" width="100" height="100" alt="Logo"></a>
                                         </div>
                                         <ul class="navigation right">
-                                            <li class="menu-item-has-children"><a href="#">About</a>
+                                            <li class="menu-item-has-children"><a href="<?= base_url()?>about">About</a>
                                                
                                             </li>
-                                            <li><a href="contact.html">Contact Us</a></li>
+                                            <li><a href="<?= base_url()?>contact">Contact Us</a></li>
                                         </ul>
                                     </div>
                                     <div class="header-action d-none d-md-block">
@@ -115,18 +118,18 @@
                                 <div class="close-btn"><i class="flaticon-targeting-cross"></i></div>
                                 <nav class="menu-box">
 
-                                    <div class="nav-logo responsive"><a href="index.html"><img src="<?= base_url()?>uploads/system/logo-vertikal.png"  alt="" title=""></a>
+                                    <div class="nav-logo responsive"><a href="index.html"><img src="<?= base_url()?>uploads/system/logo.png"  alt="" title=""></a>
                                     </div>
                                     <div class="menu-outer">
                                         <ul class="navigation">
-                                            <li class=" menu-item-has-children"><a href="#">Home</a>
+                                            <li class=" menu-item-has-children"><a href="<?= base_url()?>about">Home</a>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Shop</a>
+                                            <li class="menu-item-has-children"><a href="<?= base_url()?>shop">Shop</a>
                                             </li>
-                                            <li><a href="about-us.html">About Us</a></li>
-                                            <li class="menu-item-has-children"><a href="#">blog</a>
+                                            <li><a href="<?= base_url()?>about">About Us</a></li>
+                                            <li class="menu-item-has-children"><a href="<?= base_url()?>contact">Contact</a>
                                             </li>
-                                            <li><a href="contact.html">Contact Us</a></li>
+                                          
                                         </ul>
                                     </div>
                                     <div class="social-links">
@@ -160,84 +163,7 @@
             </div>
             <!-- Modal Search-end -->
 
-            <!-- off-canvas-start -->
-            <div class="sidebar-off-canvas info-group">
-                <div class="off-canvas-overlay"></div>
-                <div class="off-canvas-widget scroll">
-                    <div class="sidebar-widget-container">
-                        <div class="off-canvas-heading">
-                            <a href="#" class="close-side-widget">
-                                <span class="flaticon-targeting-cross"></span>
-                            </a>
-                        </div>
-                        <div class="sidebar-textwidget">
-                            <div class="sidebar-info-contents">
-                                <div class="content-inner">
-                                    <div class="logo mb-30">
-                                        <a href="index.html"><img src="img/logo/logo.png" alt=""></a>
-                                    </div>
-                                    <div class="content-box">
-                                        <p>WooCommerce and WordPress are both free, open source software reasons many ...</p>
-                                    </div>
-                                    <div class="contact-info">
-                                        <h4 class="title">CONTACT US</h4>
-                                        <ul>
-                                            <li><span class="flaticon-phone-call"></span><a href="tel:123456789">+9 325 444 0000</a></li>
-                                            <li><span class="flaticon-email"></span><a href="mailto:adara@info.com">adara@info.com</a></li>
-                                            <li><span class="flaticon-place"></span>71 Park Lan Street 2355 NY</li>
-                                        </ul>
-                                    </div>
-                                    <div class="oc-newsletter">
-                                        <h4 class="title">NEWSLETTER</h4>
-                                        <p>Fill your email below to subscribe to my newsletter</p>
-                                        <form action="#">
-                                            <input type="email" placeholder="Email...">
-                                            <button class="btn">Subscribe</button>
-                                        </form>
-                                    </div>
-                                    <div class="oc-social">
-                                        <ul>
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-google"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="oc-bottom">
-                                        <div class="currency">
-                                            <form action="#">
-                                                <label>Currency</label>
-                                                <select name="select">
-                                                    <option value="">USD</option>
-                                                    <option value="">AUE</option>
-                                                    <option value="">SAR</option>
-                                                    <option value="">INR</option>
-                                                    <option value="">BDT</option>
-                                                </select>
-                                            </form>
-                                        </div>
-                                        <div class="language">
-                                            <form action="#">
-                                                <label>Language</label>
-                                                <select name="select">
-                                                    <option value="">English</option>
-                                                    <option value="">Spanish</option>
-                                                    <option value="">Turkish</option>
-                                                    <option value="">Russian</option>
-                                                    <option value="">Chinese</option>
-                                                </select>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- off-canvas-end -->
+           
 
         </header>
         <!-- header-area-end -->

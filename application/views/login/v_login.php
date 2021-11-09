@@ -21,7 +21,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<link href="<?= base_url()?>assets/admin/css/app.css" rel="stylesheet">
 	<link href="<?= base_url()?>assets/admin/css/icons.css" rel="stylesheet">
-	<title>Synadmin – Bootstrap5 Admin Template</title>
+	<title>Login</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@
 								<div class="p-4 rounded">
 									<div class="text-center">
 										<h3 class="">Sign in</h3>
-										
+
 										</p>
 									</div>
 									<div class="d-grid">
@@ -67,7 +67,7 @@
 													<label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
 												</div>
 											</div>
-										
+
 											</div>
 											<div class="col-12">
 												<div class="d-grid">

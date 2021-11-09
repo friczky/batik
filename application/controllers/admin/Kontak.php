@@ -34,7 +34,7 @@ class Kontak extends CI_Controller {
         
         $this->db->where('id',$id);
         $this->db->update('tb_kontak',$data);
-        $this->session->set_flashdata('sukses', '<div class="alert alert-success">Berhasil mengedit user !</div>');
+        $this->session->set_flashdata('contact', '<div class="alert alert-success">Success Update Contact!</div>');
         redirect(base_url('admin/kontak'));
     }
 }

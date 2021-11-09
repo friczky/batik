@@ -23,27 +23,21 @@ include 'part/navbar.php';
 						</nav>
 					</div>
 					<div class="ms-auto">
-						<div class="btn-group">
-							<button type="button" class="btn btn-primary">Settings</button>
-							<button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
-							</button>
-							<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
-								<a class="dropdown-item" href="javascript:;">Another action</a>
-								<a class="dropdown-item" href="javascript:;">Something else here</a>
-								<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 				<!--end breadcrumb-->
 				<div class="container">
 					<div class="main-body">
+						<hr>
 						<div class="row">
+
+							<br>
 							<div class="col-lg-4">
 								<div class="card">
 									<div class="card-body">
 										<div class="d-flex flex-column align-items-center text-center">
-											<img src="<?= base_url()?>uploads/user/<?= $user['foto']?>" alt="Admin" class="img thumbnail" width="100px">
+											<img src="<?= base_url()?>uploads/user/<?= $user['foto']?>" alt="Admin" class="img-thumbnail" width="100px">
 											<div class="mt-3">
 												<h4><?= $user['nama']?></h4>
 												<p class="text-secondary mb-1"><?= $user['role']?></p>

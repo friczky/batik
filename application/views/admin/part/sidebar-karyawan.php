@@ -56,30 +56,6 @@
 
                 <li class="menu-label">SYSTEM</li>
 
-                <li>
-                    <a href="<?= base_url()?>admin/user">
-                        <div class="parent-icon">
-                            <i class='bx bx-user-circle'></i>
-                        </div>
-                        <div class="menu-title">User</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?= base_url()?>admin/kontak">
-                        <div class="parent-icon">
-                            <i class='bx bxs-contact'></i>
-                        </div>
-                        <div class="menu-title">Contact</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?= base_url()?>admin/tentang">
-                        <div class="parent-icon">
-                            <i class='bx bx-info-circle'></i>
-                        </div>
-                        <div class="menu-title">About</div>
-                    </a>
-                </li>
 				<li>
                     <a href="<?= base_url()?>admin/profil">
                         <div class="parent-icon">

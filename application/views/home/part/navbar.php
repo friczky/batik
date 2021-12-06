@@ -81,7 +81,7 @@
                                 <nav class="menu-nav show">
                                     <div class="logo d-block d-lg-none">
                                         <?php $system = $this->db->where('id',1)->get('tb_tentang')->row_array()?>
-                                        <a href="<?= base_url()?>"><img src="<?= base_url()?>uploads/system/logo.png" alt="Logo"></a>
+                                        <a href="<?= base_url()?>"><img src="<?= base_url()?>uploads/system/logo-vertikal-ab.png" alt="Logo"></a>
                                     </div>
                                     <div class="navbar-wrap main-menu d-none d-lg-flex">
                                         <ul class="navigation left">
@@ -106,7 +106,6 @@
                                     </div>
                                     <div class="header-action d-none d-md-block">
                                         <ul>
-                                            <li class="header-search"><a href="#" data-toggle="modal" data-target="#search-modal"><i class="flaticon-search"></i></a></li>
                                             <li class="header-profile"><a href="<?= base_url()?>login"><i class="flaticon-user"></i></a></li>
                                            
                                         </ul>
@@ -118,11 +117,11 @@
                                 <div class="close-btn"><i class="flaticon-targeting-cross"></i></div>
                                 <nav class="menu-box">
 
-                                    <div class="nav-logo responsive"><a href="index.html"><img src="<?= base_url()?>uploads/system/logo.png"  alt="" title=""></a>
+                                    <div class="nav-logo responsive"><a href="<?= base_url()?>"><img src="<?= base_url()?>uploads/system/logo-vertikal-ab.png"  alt="" title=""></a>
                                     </div>
                                     <div class="menu-outer">
                                         <ul class="navigation">
-                                            <li class=" menu-item-has-children"><a href="<?= base_url()?>about">Home</a>
+                                            <li class=" menu-item-has-children"><a href="<?= base_url()?>">Home</a>
                                             </li>
                                             <li class="menu-item-has-children"><a href="<?= base_url()?>shop">Shop</a>
                                             </li>
@@ -132,15 +131,7 @@
                                           
                                         </ul>
                                     </div>
-                                    <div class="social-links">
-                                        <ul class="clearfix">
-                                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
-                                        </ul>
-                                    </div>
+                                    
                                 </nav>
                             </div>
                             <div class="menu-backdrop"></div>
@@ -150,18 +141,7 @@
                 </div>
             </div>
 
-            <!-- Modal Search -->
-            <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <form>
-                            <input type="text" placeholder="Search here...">
-                            <button><i class="flaticon-search"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal Search-end -->
+           
 
            
 

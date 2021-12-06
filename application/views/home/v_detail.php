@@ -83,11 +83,11 @@ include 'part/navbar.php';
                                     <i class="fas fa-star"></i>
                                 </div>
                                
-                                <div class="price">Price : Rp.<?= $produk['harga']?></div>
+                                <div class="price">Price : Rp.<?= $produk['harga']?>;-</div>
                                
                                 <div class="perched-info" >
                                     
-                                    <a href="#" class="btn"><i class="fab fa-whatsapp"></i> Checkout</a>
+                                    <a href=" https://wa.me/089637881528?text=Saya tertarik dengan produk ini : <?= base_url()?>batik/detail/<?= $produk['slug']?> , dapatkah saya mendapatkan informasi lebih lanjut untuk pembelian ?" class="btn"><i class="fab fa-whatsapp"></i> Checkout</a>
                                     <div class="wishlist-compare">
                                       
                                     </div>
@@ -100,11 +100,7 @@ include 'part/navbar.php';
                         <div class="col-12">
                             <div class="product-desc-wrap">
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description"
-                                            aria-selected="true">Description Guide</a>
-                                    </li>
-                                   
+                            
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">

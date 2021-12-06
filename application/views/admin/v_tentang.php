@@ -33,7 +33,7 @@ include 'part/navbar.php';
 					  <hr/>
                        <div class="form-body">
 					   <div class="col-sm-12 row">
-							<div class="col-sm-1">Image</div>
+							<div class="col-sm-1">Logo</div>
 							<div class="col-sm-10">
 								<img src="<?= base_url()?>uploads/system/<?= $about['foto']?>" alt="" width="300px" class="card-image">
 							</div>
@@ -50,7 +50,7 @@ include 'part/navbar.php';
 						<br>
 						
 						<div class="col-sm-12 row">
-							<div class="col-sm-1">Image</div>
+							<div class="col-sm-1">New Logo</div>
 							<div class="col-sm-10">
 								<input type="file" name="foto" class="form-control">
 								<input type="hidden" name="foto_old" class="form-control" value="<?= $about['foto']?>">
@@ -68,6 +68,7 @@ include 'part/navbar.php';
 							<div class="col-sm-1"></div>
 							<div class="col-sm-11"><input type="submit" class="btn btn-primary" value="Update" name="update"></div>
 						</div>
+					  <hr/>
 						</form>
 					   </div><!--end row-->
 					</div>

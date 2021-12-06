@@ -2,8 +2,6 @@
 <?php 
 
 include 'part/header.php';
-include 'part/sidebar.php';
-include 'part/navbar.php';
 
 ?>
 
@@ -25,7 +23,7 @@ include 'part/navbar.php';
 					</div>
 					<div class="ms-auto">
 						<div class="btn-group">
-							<a href="<?= base_url()?>admin/produk" class="btn btn-primary"><i class="bx bx-arrow-back"></i> Back</a>
+							<a href="<?= base_url()?>admin/user" class="btn btn-primary"><i class="bx bx-arrow-back"></i> Back</a>
 							
 						</div>
 					</div>
@@ -38,9 +36,9 @@ include 'part/navbar.php';
 					  <hr/>
 
 					   <div class="w3-bar w3-black">
-  <button class="btn btn-primary" onclick="openTab('biodata')">Biodata</button>
-  <button class="btn btn-secondary" onclick="openTab('password')">Change Password</button>
-</div> 
+						  <button class="btn btn-primary" onclick="openTab('biodata')">Biodata</button>
+						  <button class="btn btn-secondary" onclick="openTab('password')">Change Password</button>
+						</div> 
 
 					  <div id="biodata" class="menutab">
   						<br>
@@ -59,14 +57,6 @@ include 'part/navbar.php';
 							<div class="col-sm-1">Username</div>
 							<div class="col-sm-10">
 								<input type="text" name="username" class="form-control" value="<?= $user['username']?>">
-							</div>
-						</div>
-						<br>
-						<div class="col-sm-12 row">
-							<div class="col-sm-1">Password</div>
-							<div class="col-sm-10">
-								<input type="password" name="password" class="form-control" value="<?= $user['password']?>" disabled>
-								<a href="">Change Password</a>
 							</div>
 						</div>
 						<br>

@@ -2,9 +2,6 @@
 <?php 
 
 include 'part/header.php';
-include 'part/sidebar.php';
-include 'part/navbar.php';
-
 ?>
 
 <!--start page wrapper -->
@@ -25,7 +22,7 @@ include 'part/navbar.php';
 					</div>
 					<div class="ms-auto">
 						<div class="btn-group">
-							<a href="<?= base_url()?>admin/user" class="btn btn-primary"><i class="bx bx-arrow-back"></i> Back</a>
+							<a href="<?= base_url()?>admin/produk" class="btn btn-primary"><i class="bx bx-arrow-back"></i> Back</a>
 							
 						</div>
 					</div>
@@ -49,10 +46,10 @@ include 'part/navbar.php';
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Category</div>
 							<div class="col-sm-10">
-								<select name="kategori" id="" class="form-control">
+								<select name="id_kategori" id="" class="form-control">
 									<option value=""></option>
 									<?php foreach($k as $k){?>
-									<option value="<?= $k->nama?>"><?= $k->nama?></option>
+									<option value="<?= $k->id?>"><?= $k->kategori?></option>
 									<?php } ?>
 								</select>
 							</div>

@@ -10,7 +10,7 @@ include 'part/navbar.php';
                     <div class="row">
                         <div class="col-12">
                             <div class="breadcrumb-content">
-                                <h2>Our Products</h2>
+                                <h2>Category <?= $category['kategori'] ?></h2>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="<?= base_url()?>">Home</a></li>
@@ -32,11 +32,11 @@ include 'part/navbar.php';
                             <div class="shop-top-meta mb-35">
                                 <div class="row">
                                     <div class="col-md-6">
-                                       <b>Sorty By</b>
+                                       <b>Show By</b>
                                        <hr>
                                     </div>
                                     <div class="col-md-6 text-right">
-                                       <b>All Category</b>
+                                       <b><?= $category['kategori'] ?></b>
                                        <hr>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@ include 'part/navbar.php';
                                 <?php foreach($produk as $p) {?>
                                 <div class="col-xl-4 col-sm-6">
                                     <div class="new-arrival-item text-center mb-50">
-                                        <div class="thumb">
+                                        <div class="thumb mb-25">
                                             <a href="<?= base_url()?>detail/<?= $p->slug?>"><img src="<?= base_url()?>uploads/produk/<?= $p->foto?>" alt="" width="200" height="200"></a>
                                             <div class="product-overlay-action">
                                                 <ul>
@@ -56,7 +56,7 @@ include 'part/navbar.php';
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <h5><a href="<?= base_url()?>detail/<?= $p->slug?>"><?= $p->nama?></a></h5>
+                                            <h5><a href="shop-details.html"><?= $p->nama?></a></h5>
                                             <span class="price">Rp.<?= $p->harga?></span>
                                         </div>
                                     </div>
@@ -73,7 +73,7 @@ include 'part/navbar.php';
                                     <h4 class="widget-title">Product Categories</h4>
                                     <div class="shop-cat-list">
                                         <ul>
-                                            <?php foreach($kategori as $k){?>
+                                           <?php foreach($kategori as $k){?>
                                             <li><a href="<?= base_url()?>category/<?= $k->id?>"><?= $k->kategori?></a></li>
                                            <?php }?>
                                         </ul>

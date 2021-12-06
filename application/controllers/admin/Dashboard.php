@@ -12,9 +12,9 @@ class Dashboard extends CI_Controller {
 
     public function index()
         {
-            $data['blog'] = $this->db->order_by('id','desc')->get('tb_produk');
+            
 			$data['kategori'] = $this->db->order_by('id','desc')->get('tb_kategori',5)->result();
-			$data['produk'] = $this->db->order_by('id','desc')->get('tb_produk')->result();
+            $data['produk'] = $this->db->select('*')->from('tb_produk')->join('tb_kategori','tb_kategori.id = tb_produk.id_kategori')->order_by('tb_produk.id','desc')->get()->result();
             $this->load->view('admin/v_dashboard',$data);
         }
 

@@ -2,8 +2,6 @@
 <?php 
 
 include 'part/header.php';
-include 'part/sidebar.php';
-include 'part/navbar.php';
 
 ?>
 
@@ -49,9 +47,11 @@ include 'part/navbar.php';
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Category</div>
 							<div class="col-sm-10">
-								<select name="kategori" id="" class="form-control">
-									<option value="<?= $p['kategori']?>"> <?= $p['nama']?> </option>
-									<option value="SSSS">SSSSS</option>
+								<select name="id_kategori" id="" class="form-control">
+									<option value="<?= $p['id_kategori']?>"> <?= $p['kategori']?> (Kategori Sekarang )</option>
+									<?php foreach($k as $k){?>
+									<option value="<?= $k->id?>"><?= $k->kategori?></option>
+									<?php } ?>
 								</select>
 							</div>
 						</div>

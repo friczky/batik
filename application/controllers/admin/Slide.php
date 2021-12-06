@@ -13,6 +13,7 @@ class Slide extends CI_Controller {
     public function index()
         {
             $data['slide'] = $this->db->order_by('id','desc')->get('tb_slide')->result();
+            $data['product'] = $this->db->order_by('id','desc')->get('tb_produk')->result();
             $this->load->view('admin/v_slide',$data);
         }
 
@@ -34,6 +35,7 @@ class Slide extends CI_Controller {
             }
 
         $data = [
+            'id_user'       => $this->session->userdata('id'),
             'judul'			=> $this->input->post('judul'),
             'subjudul'		=> $this->input->post('subjudul'),
             'link'		    => $this->input->post('link'),
@@ -54,6 +56,7 @@ class Slide extends CI_Controller {
         $foto       = $_FILES['foto']['name'];
 
         $data = [
+            'id_user'       => $this->session->userdata('id'),
             'judul'         => $this->input->post('judul'),
             'subjudul'      => $this->input->post('subjudul'),
             'link'          => $this->input->post('link'),
@@ -75,7 +78,7 @@ class Slide extends CI_Controller {
         }
         $this->db->where('id',$id);
         $this->db->update('tb_slide',$data);
-        $this->session->set_flashdata('sukses', '<div class="alert alert-success">Berhasil mengedit Artikel !</div>');
+        $this->session->set_flashdata('sukses', '<div class="alert alert-success">Success update slide !</div>');
         redirect(base_url('admin/slide'));
     }
 

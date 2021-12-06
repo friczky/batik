@@ -40,7 +40,6 @@ include 'part/navbar.php';
 
 
             <!-- cat-area -->
-            <section class="category-area pt-100 pb-45">
                 <div class="container">
                     <div class="cat-title-line">
                         <div class="row justify-content-center">
@@ -58,9 +57,7 @@ include 'part/navbar.php';
                    
                     </div>
                 </div>
-            </section>
             <!-- cat-area-end -->
-
 
             <!-- new-arrival-area -->
             <section class="new-arrival-area h9-arrival-product pt-95 pb-45">
@@ -73,7 +70,6 @@ include 'part/navbar.php';
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                       
 
                     </div>
 

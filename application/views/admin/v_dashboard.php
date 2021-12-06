@@ -2,8 +2,6 @@
 <?php 
 
 include 'part/header.php';
-include 'part/sidebar.php';
-include 'part/navbar.php';
 
 ?>
 
@@ -101,10 +99,10 @@ include 'part/navbar.php';
 							<table class="table mb-0 align-middle">
 								<thead>
 									<tr>
-										<th>Foto</th>
-										<th>Nama</th>
-										<th>Kategori</th>
-										<th>Harga</th>
+										<th>Picture</th>
+										<th>Name</th>
+										<th>Category</th>
+										<th>Price</th>
 										<th>Link</th>
 									</tr>
 								</thead>
@@ -114,10 +112,10 @@ include 'part/navbar.php';
 										<td>	
 										<img src="<?= base_url()?>uploads/produk/<?= $produk->foto?>" width="50px"  alt="">
 										</td>
-										<td><?= $produk->nama?></td>
+								 		<td><?= $produk->nama?></td>
 										<td><?= $produk->kategori?></td>
-										<td>Rp.<?= $produk->harga?></td>
-										<td><a href="<?= base_url()?>" class="btn btn-sm btn-success radius-30">Lihat Produk </a>
+										<td>Rp.<?= $produk->harga?>;-</td>
+										<td><a href="<?= base_url()?>detail/<?= $produk->slug?> " target="_blank" class="btn btn-sm btn-success radius-30">Show Product </a>
 										</td>
 									</tr>
 									<?php }?>

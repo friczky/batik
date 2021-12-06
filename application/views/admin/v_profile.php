@@ -2,8 +2,6 @@
 <?php 
 
 include 'part/header.php';
-include 'part/sidebar.php';
-include 'part/navbar.php';
 
 ?>
 
@@ -52,12 +50,13 @@ include 'part/navbar.php';
 								<div class="card">
 									<div class="card-body">
 										<?= $this->session->userdata('sukses')?>
+										<form action="<?= base_url()?>admin/profil/update/<?= $user['id']?>" method="POST" enctype="multipart/form-data">
 										<div class="row mb-3">
 											<div class="col-sm-3">
 												<h6 class="mb-0">Name</h6>
 											</div>
 											<div class="col-sm-9 text-secondary">
-												<input type="text" class="form-control" value="<?= $user['nama']?>" />
+												<input type="text" class="form-control" name="nama" value="<?= $user['nama']?>" />
 											</div>
 										</div>
 										<div class="row mb-3">
@@ -65,7 +64,7 @@ include 'part/navbar.php';
 												<h6 class="mb-0">Username</h6>
 											</div>
 											<div class="col-sm-9 text-secondary">
-												<input type="text" class="form-control" value="<?= $user['username']?>" />
+												<input type="text" class="form-control" name="username" value="<?= $user['username']?>" />
 											</div>
 										</div>
 										<div class="row mb-3">
@@ -73,7 +72,7 @@ include 'part/navbar.php';
 												<h6 class="mb-0">Email</h6>
 											</div>
 											<div class="col-sm-9 text-secondary">
-												<input type="text" class="form-control" value="<?= $user['email']?>" />
+												<input type="text" class="form-control" name="email" value="<?= $user['email']?>" />
 											</div>
 										</div>
 										<div class="row mb-3">
@@ -90,7 +89,7 @@ include 'part/navbar.php';
 												<h6 class="mb-0">Image</h6>
 											</div>
 											<div class="col-sm-9 text-secondary">
-												<input type="file" class="form-control" />
+												<input type="file" name="foto" class="form-control" />
 												<input type="hidden" name="foto_old" value="<?= $user['foto']?>">
 											</div>
 										</div>
@@ -100,6 +99,7 @@ include 'part/navbar.php';
 												<input type="submit" class="btn btn-primary px-4" value="Update" />
 											</div>
 										</div>
+										</form>
 									</div>
 								</div>
 								
@@ -110,7 +110,5 @@ include 'part/navbar.php';
 			</div>
 		</div>
 		<!--end page wrapper -->
-
-
 
 <?php include 'part/footer.php';?>

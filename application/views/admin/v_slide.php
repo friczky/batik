@@ -1,8 +1,6 @@
 <?php 
 
 include 'part/header.php';
-include 'part/sidebar.php';
-include 'part/navbar.php';
 
 ?>
 
@@ -52,7 +50,12 @@ include 'part/navbar.php';
 								<input type="text" name="subjudul" class="form-control" placeholder="Inser sub title">
 								<br>
 								Link
-								<input type="text" name="link" class="form-control" placeholder="Insert Link Addrres">
+								<select name="link" id="" class="form-control">
+                                    <option value=""></option>
+                                    <?php foreach($product as $p){?>
+                                        <option value="<?= base_url()?>detail/<?= $p->slug?>"><?= $p->nama?></option>
+                                    <?php }?>
+                                </select>
 								<br>
 								Foto
 								<input type="file" name="foto" id="" class="form-control">
@@ -138,7 +141,12 @@ include 'part/navbar.php';
 								<input type="text" name="subjudul" class="form-control" placeholder="Inser sub title" value="<?= $s->subjudul?>">
 								<br>
 								Link
-								<input type="text" name="link" class="form-control" placeholder="Insert Link Addrres" value="<?= $s->link?>">
+								<select name="link" id="" class="form-control">
+                                    <option value=""></option>
+                                    <?php foreach($product as $p){?>
+                                        <option value="<?= base_url()?>detail/<?= $p->slug?>"><?= $p->nama?></option>
+                                    <?php }?>
+                                </select>
 								<br>
 								Image (Size : 682x670)
 								<input type="file" name="foto" id="" class="form-control">

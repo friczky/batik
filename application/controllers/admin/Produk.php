@@ -12,7 +12,8 @@ class Produk extends CI_Controller {
 
     public function index()
         {
-            $data['produk'] = $this->db->order_by('id','desc')->get('tb_produk')->result();
+            $data['produk'] = $this->db->query('Select p.id, p.nama,p.foto,p.harga, k.kategori From tb_produk p JOIN tb_kategori k on p.id_kategori = k.id ORDER BY p.id DESC')->result();
+            
             $this->load->view('admin/v_produk',$data);
         }
 
@@ -23,6 +24,7 @@ class Produk extends CI_Controller {
     }
 
     public function store(){
+        $id_user = $this->session->userdata('id') ;
         $foto1  = $_FILES['foto'];
             if ($foto1) {
                 $config['allowed_types'] = 'jpg|png|gif|jpeg|svg';
@@ -42,20 +44,21 @@ class Produk extends CI_Controller {
 		 $slug      = $pre_slug.'.html'; 
 
         $data = [
+            'id_user'       => $id_user,
+            'id_kategori'   => $this->input->post('id_kategori'),
             'nama'			=> $nama,
             'slug'			=> $slug,
-            'kategori'		=> $this->input->post('kategori'),
             'deskripsi'		=> $this->input->post('deskripsi'),
 			'harga'			=> $this->input->post('harga'),
             'foto'          => $foto,
         ];
         $this->db->insert('tb_produk',$data);
-        $this->session->set_flashdata('sukses', '<div class="alert alert-success">Berhasil menambahkan Produk !</div>');
+        $this->session->set_flashdata('sukses', '<div class="alert alert-success">Success added product !</div>');
         redirect(base_url('admin/produk'));
     }
 
     public function edit($id){
-    	$data['p']		= $this->db->where('id',$id)->get('tb_produk')->row_array();
+    	$data['p'] = $this->db->query('Select p.id, p.nama,p.foto,p.harga,p.deskripsi,p.id_kategori, k.kategori From tb_produk p JOIN tb_kategori k on p.id_kategori = k.id WHERE p.id ='.$id)->row_array();
         $data['k']      = $this->db->get('tb_kategori')->result();
   
         $this->load->view('admin/v_produk_edit',$data);
@@ -72,9 +75,10 @@ class Produk extends CI_Controller {
          $slug       =$pre_slug.'.html'; 
 
         $data = [
+            'id_user'       => $this->session->userdata('id'),
+            'id_kategori'   => $this->input->post('id_kategori'),
             'nama'			=> $nama,
             'slug'			=> $slug,
-            'kategori'		=> $this->input->post('kategori'),
             'deskripsi'		=> $this->input->post('deskripsi'),
 			'harga'			=> $this->input->post('harga'),
         ];
@@ -94,7 +98,7 @@ class Produk extends CI_Controller {
         }
         $this->db->where('id',$id);
         $this->db->update('tb_produk',$data);
-        $this->session->set_flashdata('sukses', '<div class="alert alert-success">Berhasil mengedit produk !</div>');
+        $this->session->set_flashdata('sukses', '<div class="alert alert-success">Success updated Product !</div>');
         redirect(base_url('admin/produk'));
     }
 
@@ -104,32 +108,32 @@ class Produk extends CI_Controller {
             unlink('uploads/produk/'.$u->foto);
         } 
         $this->db->where('id',$id)->delete('tb_produk');
-        $this->session->set_flashdata('sukses','<div class="alert alert-success"> Berhasil Menghapus produk !</div>');
+        $this->session->set_flashdata('sukses','<div class="alert alert-success"> Success Deleted Product !</div>');
         redirect(base_url('admin/produk'));
     }
 
 	public function kategori(){
 		if ( isset($_POST['simpan']) ){
 			$data = [
-				'nama'		=> $this->input->post('nama'),
-				'deskripsi'	=> $this->input->post('deskripsi')
+				'id_user'            => $this->session->userdata('id') ,
+                'kategori'           => $this->input->post('kategori'),
 			];
 			$this->db->insert('tb_kategori',$data);
-			$this->session->set_flashdata('sukses','<div class="alert alert-success"> Berhasil Menambah Kategori !</div>');
+			$this->session->set_flashdata('sukses','<div class="alert alert-success"> Success added category !</div>');
         	redirect(base_url('admin/produk/kategori'));
 		} elseif (isset($_POST['update'])) {
 			$id = $this->input->post('id');
 			$data = [
-				'nama'		=> $this->input->post('nama'),
-				'deskripsi'	=> $this->input->post('deskripsi'),
+            'id_user'            => $this->session->userdata('id') ,
+            'kategori'           => $this->input->post('kategori'),
 			];
 			$this->db->where('id',$id)->update('tb_kategori',$data);
-			$this->session->set_flashdata('sukses','<div class="alert alert-success"> Berhasil Menambah Kategori !</div>');
+			$this->session->set_flashdata('sukses','<div class="alert alert-success"> Success update category !</div>');
         	redirect(base_url('admin/produk/kategori'));
 		} elseif (isset($_POST['hapus'])){
 			$id =  $this->input->post('id');
 			$this->db->where('id',$id)->delete('tb_kategori');
-			$this->session->set_flashdata('sukses','<div class="alert alert-success"> Berhasil Menghapus Kategori !</div>');
+			$this->session->set_flashdata('sukses','<div class="alert alert-success"> Success delete category !</div>');
         	redirect(base_url('admin/produk/kategori'));
 		} else {
 			$data['kategori'] = $this->db->order_by('id','desc')->get('tb_kategori')->result();

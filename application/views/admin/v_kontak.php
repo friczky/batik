@@ -2,8 +2,6 @@
 <?php 
 
 include 'part/header.php';
-include 'part/sidebar.php';
-include 'part/navbar.php';
 
 ?>
 
@@ -48,7 +46,7 @@ include 'part/navbar.php';
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Address</div>
 							<div class="col-sm-10">
-								<textarea name="alamat" class="form-control" id="" cols="30" rows="10"><?= $contact['alamat']?></textarea>
+								<textarea name="alamat" class="form-control" id="" cols="30" rows="5"><?= $contact['alamat']?></textarea>
 							</div>
 						</div>
 						<br>
@@ -69,7 +67,7 @@ include 'part/navbar.php';
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Maps Url</div>
 							<div class="col-sm-10">
-								<input type="text" name="maps" class="form-control" value="<?= $contact['maps']?>">
+								<textarea name="maps" class="form-control" id="" cols="30" rows="5"><?= $contact['maps']?></textarea>
 							</div>
 						</div>
 						<br>

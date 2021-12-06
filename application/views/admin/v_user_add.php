@@ -2,8 +2,6 @@
 <?php 
 
 include 'part/header.php';
-include 'part/sidebar.php';
-include 'part/navbar.php';
 
 ?>
 
@@ -72,7 +70,7 @@ include 'part/navbar.php';
 							<div class="col-sm-10">
 								<select name="role" class="form-control" id="">
 									<option value="Super Admin">Super Admin</option>
-									<option value="Admin">Admin</option>
+									<option value="Karyawan">Karyawan</option>
 								</select>
 							</div>
 						</div>

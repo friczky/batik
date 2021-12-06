@@ -1,8 +1,6 @@
 <?php 
 
 include 'part/header.php';
-include 'part/sidebar.php';
-include 'part/navbar.php';
 
 ?>
 
@@ -44,18 +42,11 @@ include 'part/navbar.php';
 
                                 <input
                                     type="text"
-                                    name="nama"
+                                    name="kategori"
                                     placeholder="Insert Category Name"
                                     class="form-control">
                                 <br>
-                                <textarea
-                                    name="deskripsi"
-                                    class="form-control"
-                                    id=""
-                                    cols="30"
-                                    rows="10"
-                                    placeholder="Insert Description"></textarea>
-                                <br>
+                            
                                 <input type="submit" name="simpan" class="btn btn-primary" value="Add Category">
 
                             </div>
@@ -64,15 +55,13 @@ include 'part/navbar.php';
                                 <table class="table">
                                     <tr>
                                         <th>No.</th>
-                                        <th>Name</th>
-                                        <th>Description</th>
+                                        <th>Category</th>
                                         <th>Action</th>
                                     </tr>
                                     <?php $no =1 ; foreach ($kategori as $k){?>
                                     <tr>
                                         <td><?= $no++ ?></td>
-                                        <td><?= $k->nama?></td>
-                                        <td><?= $k->deskripsi?></td>
+                                        <td><?= $k->kategori?></td>
                                         <td>
                                             <a href="#edit<?= $k->id?>">
                                                 <i
@@ -109,8 +98,8 @@ include 'part/navbar.php';
 <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title">Edit Categori :
-                <?= $k->nama ?></h5>
+            <h5 class="modal-title">Edit Category :
+                <?= $k->kategori ?></h5>
             <button
                 type="button"
                 class="btn-close"
@@ -124,19 +113,12 @@ include 'part/navbar.php';
                 enctype="multipart/form-data">
                 <input
                     type="text"
-                    name="nama"
+                    name="kategori"
                     placeholder="Insert Category Name"
                     class="form-control"
-                    value="<?= $k->nama?>">
+                    value="<?= $k->kategori?>">
                 <br>
-                <textarea
-                    name="deskripsi"
-                    class="form-control"
-                    id=""
-                    cols="30"
-                    rows="5"
-                    placeholder="Insert Description"><?= $k->deskripsi?></textarea>
-				<input type="hidden" name="id" value="<?= $k->id?>">
+                <input type="hidden" name="id" value="<?= $k->id?>">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -164,13 +146,13 @@ include 'part/navbar.php';
     </div>
     <div class="modal-body text-white">
         <p>Do you want to delete
-            <b><?= $k->nama?>
+            <b><?= $k->kategori?>
                 ?</b>
         </p>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">No</button>
-        <form action="<?= base_url()?>admin/produk/kategori">
+        <form action="<?= base_url()?>admin/kategori/delete/<?= $k->id?>">
 		<input type="hidden" name="id" value="<?= $k->id?>">
 		<input type="submit" name="hapus" value="Yes" class="btn btn-warning">
         </form>

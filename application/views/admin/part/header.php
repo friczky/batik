@@ -38,4 +38,14 @@
         redirect (base_url('login'));
     }
 
+    if ($this->session->userdata('role')=='Super Admin') {
+    	
+		include 'sidebar.php';
+		include 'navbar.php';
+
+    } else {
+		include 'sidebar-karyawan.php';
+		include 'navbar.php';
+    }
+
 ?>

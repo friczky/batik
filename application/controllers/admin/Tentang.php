@@ -8,6 +8,10 @@ class Tentang extends CI_Controller {
         parent::__construct();
         $this->load->helper(array('form', 'url'));
         $this->load->library('upload');
+
+        if ($this->session->userdata('role')=='Karyawan') {
+        	redirect(base_url('admin'));
+        }
     }
 
     public function index()

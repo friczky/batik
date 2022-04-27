@@ -47,7 +47,7 @@ include 'part/navbar.php';
                                 <div class="col-xl-4 col-sm-6">
                                     <div class="new-arrival-item text-center mb-50">
                                         <div class="thumb">
-                                            <a href="<?= base_url()?>detail/<?= $p->slug?>"><img src="<?= base_url()?>uploads/produk/<?= $p->foto?>" alt="" width="200" height="200"></a>
+                                            <a href="<?= base_url()?>detail/<?= $p->slug?>"><img src="<?= base_url()?>uploads/produk/<?= $p->foto?>" alt="" width="100%"></a>
                                             <div class="product-overlay-action">
                                                 <ul>
                                                     

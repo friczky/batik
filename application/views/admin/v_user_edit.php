@@ -73,7 +73,7 @@ include 'part/header.php';
 								<select name="role" class="form-control" id="">
 									<option value="<?= $user['role']?>"><?= $user['role']?> (now)</option>
 									<option value="Super Admin">Super Admin</option>
-									<option value="Admin">Admin</option>
+									<option value="Karyawan">Karyawan</option>
 								</select>
 							</div>
 						</div>

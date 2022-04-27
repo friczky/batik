@@ -33,6 +33,7 @@ class Kontak extends CI_Controller {
             'alamat'		=> $this->input->post('alamat'),
             'email'		    => $this->input->post('email'),
             'telpon'		=> $this->input->post('telpon'),
+			'instagram'		=> $this->input->post('instagram'),
             'maps'          => $this->input->post('maps')
         ];
         

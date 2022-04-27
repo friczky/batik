@@ -54,7 +54,7 @@ include 'part/navbar.php';
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="item-one" role="tabpanel" aria-labelledby="item-one-tab">
                                             <div class="shop-details-img">
-                                                <img src="<?= base_url()?>uploads/produk/<?= $produk['foto']?>" alt="" width="400" height="400">
+                                                <img src="<?= base_url()?>uploads/produk/<?= $produk['foto']?>" alt="" width="100%">
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="item-two" role="tabpanel" aria-labelledby="item-two-tab">
@@ -87,7 +87,7 @@ include 'part/navbar.php';
                                
                                 <div class="perched-info" >
                                     
-                                    <a href=" https://wa.me/089637881528?text=Saya tertarik dengan produk ini : <?= base_url()?>batik/detail/<?= $produk['slug']?> , dapatkah saya mendapatkan informasi lebih lanjut untuk pembelian ?" class="btn"><i class="fab fa-whatsapp"></i> Checkout</a>
+                                    <a href=" https://wa.me/<?= $kontak['telpon']?>?text=Saya tertarik dengan produk ini : <?= base_url()?>batik/detail/<?= $produk['slug']?> , dapatkah saya mendapatkan informasi lebih lanjut untuk pembelian ?" class="btn"><i class="fab fa-whatsapp"></i> Checkout</a>
                                     <div class="wishlist-compare">
                                       
                                     </div>
@@ -108,6 +108,42 @@ include 'part/navbar.php';
                                             <h4 class="title">Additional information :</h4>
                                         
                                         <?= $produk['deskripsi']?>
+                                    </div>
+                                </div>
+								<br>
+								<div class="tab-content">
+                                    <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                                    <form action="<?= base_url()?>admin/komentar/store/<?= $produk['slug']?>" method="post">
+                                    <h4 class="title">Review Product :</h4>
+									<input type="hidden" name="id_produk" value="<?= $produk1['id']?>">
+                                    <input type="text" name="nama" class="form-control" placeholder="Input Your Name" required>
+									<br>
+                                    <input type="text" name="email" class="form-control" placeholder="Input Your Email Address" required>
+									<br>
+									<textarea name="komentar" id="" cols="30" rows="10" class="form-control" placeholder="Input Your Comment" required></textarea>
+									<br>
+									<input type="submit" class="btn btn-primary" value="Submit">
+									</form>   
+
+                                    </div>
+
+									<br>
+								<div class="tab-content">
+                                    <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                                        
+                                    <?php
+									$komentar = $this->db->where('id_produk',$produk1['id'])->get('tb_komentar')->result();
+									foreach ($komentar as $k) {
+									?>
+                                    <div class="card">
+										<div class="card-body">
+											<h5 class="card-title"><?= $k->nama?> </h5>
+											<small><?= $k->waktu?></small>
+											<p class="card-text"><?= $k->komentar?></p>
+										</div>
+									</div>
+									<br>
+									<?php }?>
                                     </div>
                                 </div>
                             </div>

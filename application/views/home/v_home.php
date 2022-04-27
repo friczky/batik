@@ -19,7 +19,7 @@ include 'part/navbar.php';
                             <div class="row align-items-center justify-content-center">
                                 <div class="col-lg-6">
                                     <div class="h9-slider-img" data-animation-in="fadeInLeft" data-delay-in=".2" data-duration-in="1.5">
-                                        <img src="<?= base_url()?>uploads/slide/<?= $s->foto?>" width="682" height="670" alt="">
+                                        <img src="<?= base_url()?>uploads/slide/<?= $s->foto?>" width="100%" alt="">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -27,7 +27,7 @@ include 'part/navbar.php';
                                         <span class="sub-title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in="1.5">new arrival</span>
                                         <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in="1.5"><?= $s->judul ?> <span>!</span></h2>
                                         <p data-animation-in="fadeInUp" data-delay-in=".8" data-duration-in="1.5"><?= $s->subjudul ?></p>
-                                        <a href="<?= base_url()?>" class="btn" data-animation-in="fadeInUp" data-delay-in="1.2" data-duration-in="1.5">Check Out</a>
+                                        <a href="<?= base_url()?>detail/<?= $s->link?>" class="btn" data-animation-in="fadeInUp" data-delay-in="1.2" data-duration-in="1.5">Check Out</a>
                                     </div>
                                 </div>
                             </div>
@@ -75,11 +75,11 @@ include 'part/navbar.php';
 
                     <div class="row new-arrival-active">
                         <?php foreach($produk as $p){?>
-                        <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
+                        <div class="col-xl-4 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
                             
                             <div class="new-arrival-item text-center mb-50">
                                 <div class="thumb mb-25">
-                                    <a href="<?= base_url()?>detail/<?= $p->slug?>"><img src="<?= base_url()?>uploads/produk/<?= $p->foto?>" width="100" height="100" alt=""></a>
+                                    <a href="<?= base_url()?>detail/<?= $p->slug?>"><img src="<?= base_url()?>uploads/produk/<?= $p->foto?>" width="100%" = alt=""></a>
                                     <div class="product-overlay-action">
                                         <ul>
                                             <li><a href="<?= base_url()?>detail/<?= $p->slug?>"><i class="far fa-eye"></i></a></li>

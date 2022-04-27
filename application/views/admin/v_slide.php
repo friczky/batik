@@ -53,7 +53,7 @@ include 'part/header.php';
 								<select name="link" id="" class="form-control">
                                     <option value=""></option>
                                     <?php foreach($product as $p){?>
-                                        <option value="<?= base_url()?>detail/<?= $p->slug?>"><?= $p->nama?></option>
+                                        <option value="<?= $p->slug?>"><?= $p->nama?></option>
                                     <?php }?>
                                 </select>
 								<br>
@@ -142,9 +142,9 @@ include 'part/header.php';
 								<br>
 								Link
 								<select name="link" id="" class="form-control">
-                                    <option value=""></option>
+                                    <option value="<?= $s->link?>"><?= $s->judul?></option>
                                     <?php foreach($product as $p){?>
-                                        <option value="<?= base_url()?>detail/<?= $p->slug?>"><?= $p->nama?></option>
+                                        <option value="<?= $p->slug?>"><?= $p->nama?></option>
                                     <?php }?>
                                 </select>
 								<br>

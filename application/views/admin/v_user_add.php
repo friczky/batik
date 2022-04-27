@@ -40,28 +40,28 @@ include 'part/header.php';
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Name</div>
 							<div class="col-sm-10">
-								<input type="text" name="nama" class="form-control" placeholder="Insert Full Name">
+								<input type="text" name="nama" class="form-control" placeholder="Insert Full Name" required>
 							</div>
 						</div>
 						<br>
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Username</div>
 							<div class="col-sm-10">
-								<input type="text" name="username" class="form-control" placeholder="Insert Username ">
+								<input type="text" name="username" class="form-control" placeholder="Insert Username " required>
 							</div>
 						</div>
 						<br>
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Password</div>
 							<div class="col-sm-10">
-								<input type="password" name="password" class="form-control" placeholder="Insert Password">
+								<input type="password" name="password" class="form-control" placeholder="Insert Password" required>
 							</div>
 						</div>
 						<br>
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Email</div>
 							<div class="col-sm-10">
-								<input type="text" name="email" class="form-control" placeholder="Insert Email">
+								<input type="text" name="email" class="form-control" placeholder="Insert Email" required>
 							</div>
 						</div>
 						<br>
@@ -79,7 +79,7 @@ include 'part/header.php';
 						<div class="col-sm-12 row">
 							<div class="col-sm-1">Images</div>
 							<div class="col-sm-10">
-								<input type="file" name="foto" class="form-control">
+								<input type="file" name="foto" class="form-control" required>
 							</div>
 						</div>
 						<br>

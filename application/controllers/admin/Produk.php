@@ -130,7 +130,7 @@ class Produk extends CI_Controller {
 			$this->db->where('id',$id)->update('tb_kategori',$data);
 			$this->session->set_flashdata('sukses','<div class="alert alert-success"> Success update category !</div>');
         	redirect(base_url('admin/produk/kategori'));
-		} elseif (isset($_POST['hapus'])){
+		} elseif (isset($_POST['delete'])){
 			$id =  $this->input->post('id');
 			$this->db->where('id',$id)->delete('tb_kategori');
 			$this->session->set_flashdata('sukses','<div class="alert alert-success"> Success delete category !</div>');

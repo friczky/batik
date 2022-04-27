@@ -152,9 +152,12 @@ include 'part/header.php';
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">No</button>
-        <form action="<?= base_url()?>admin/kategori/delete/<?= $k->id?>">
+        <form
+                action="<?= base_url()?>admin/produk/kategori"
+                method="POST" name="delete"
+                enctype="multipart/form-data">
 		<input type="hidden" name="id" value="<?= $k->id?>">
-		<input type="submit" name="hapus" value="Yes" class="btn btn-warning">
+		<button type="submit" name="delete" class="btn btn-danger">Yes</button>
         </form>
     </div>
 </div>

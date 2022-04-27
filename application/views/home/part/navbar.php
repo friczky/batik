@@ -87,7 +87,7 @@
                                         <ul class="navigation left">
                                             <li class=" menu-item-has-children has--mega--menu"><a href="<?= base_url()?>">Home</a>
                                             </li>
-                                            <li class="has--mega--menu"><a href="<?= base_url()?>shop">Store</a>
+                                            <li class="has--mega--menu"><a href="<?= base_url()?>shop">Shop</a>
                                             <li class="has--mega--menu"><a href="#"></a>
                                                 <li class="has--mega--menu"><a href="#"></a>
                                                     <li class="has--mega--menu"><a href="#"></a>

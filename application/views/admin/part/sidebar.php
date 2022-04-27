@@ -9,7 +9,7 @@
                     <img src="<?= base_url()?>uploads/system/<?= $system['foto']?>" class="logo-icon" alt="logo icon">
                 </div>
                 <div>
-                    <h4 class="logo-text">AB ADMIN</h4>
+                    <a href="<?= base_url()?>" target="_blank"><h4 class="logo-text">AB ADMIN</h4></a>
                 </div>
                 <div class="toggle-icon ms-auto">
                     <i class='bx bx-first-page'></i>
@@ -51,6 +51,14 @@
                             <i class='bx bx-file'></i>
                         </div>
                         <div class="menu-title">Slide</div>
+                    </a>
+                </li>
+				<li>
+                    <a href="<?= base_url()?>admin/komentar">
+                        <div class="parent-icon">
+                            <i class='bx bx-comment'></i>
+                        </div>
+                        <div class="menu-title">Komentar</div>
                     </a>
                 </li>
 

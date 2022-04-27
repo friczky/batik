@@ -58,9 +58,16 @@ include 'part/header.php';
 						</div>
 						<br>
 						<div class="col-sm-12 row">
-							<div class="col-sm-1">Phone</div>
+							<div class="col-sm-1">Phone (Using +62)</div>
 							<div class="col-sm-10">
 								<input type="text" name="telpon" class="form-control" value="<?= $contact['telpon']?>">
+							</div>
+						</div>
+						<br>
+						<div class="col-sm-12 row">
+							<div class="col-sm-1">Instagram Username</div>
+							<div class="col-sm-10">
+								<input type="text" name="instagram" class="form-control" value="<?= $contact['instagram']?>">
 							</div>
 						</div>
 						<br>

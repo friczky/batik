@@ -10,7 +10,7 @@ class Home extends CI_Controller {
 		$data['produk'] =  $this->db->order_by('id','desc')->get('tb_produk',5)->result();
 		$data['kategori'] =  $this->db->where('id',1)->get('tb_kategori')->result();
 		$data['kontak'] =  $this->db->where('id',1)->get('tb_kontak')->row_array();
-		$data['slide']	= $this->db->get('tb_slide')->result();
+		$data['slide']	= $this->db->order_by('id','DESC')->get('tb_slide')->result();
 		$this->load->view('home/v_home',$data);
 	}
 
@@ -39,6 +39,7 @@ class Home extends CI_Controller {
 		$data['produk'] 	=  $this->db->where('slug',$slug)->get('tb_produk')->row_array();
 		$data['produk'] 	=  $this->db->select('*')->from('tb_produk')->join('tb_kategori','tb_kategori.id = tb_produk.id_kategori')->where('tb_produk.slug',$slug)->get()->row_array();
 		$data['kategori'] 	=  $this->db->where('id',1)->get('tb_kategori')->result();
+		$data['produk1'] 	=  $this->db->where('slug',$slug)->get('tb_produk')->row_array();
 		$data['kontak'] 	=  $this->db->where('id',1)->get('tb_kontak')->row_array();
 		$this->load->view('home/v_detail',$data);
 	}
